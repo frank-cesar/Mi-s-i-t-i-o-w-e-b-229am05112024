@@ -1,0 +1,372 @@
+/* Estilos generales para el header */
+header {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre el logo y el menú */
+    align-items: center; /* Alinear verticalmente el contenido */
+    padding: 15px 30px; /* Espaciado interior del header */
+    background-color: #333; /* Color de fondo del header */
+    color: #fff; /* Color del texto dentro del header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para el header */
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 120px; /* Tamaño del logo */
+    height: auto; /* Ajuste automático de la altura */
+}
+
+.logo a {
+    text-decoration: none; /* Quitar subrayado del enlace */
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu ul {
+    list-style: none; /* Eliminar viñetas de la lista */
+    display: flex; /* Mostrar los elementos en línea */
+    gap: 25px; /* Espacio entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative; /* Permite agregar efectos como submenús en el futuro */
+}
+
+.nav-menu a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: #fff; /* Color del texto del menú */
+    font-size: 18px; /* Tamaño de letra del menú */
+    font-weight: 500; /* Grosor de la letra */
+    transition: color 0.3s ease; /* Animación suave para el cambio de color */
+}
+
+.nav-menu a:hover {
+    color: #f0a500; /* Color cuando se pasa el ratón por encima */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Cambiar la dirección de los elementos para apilarlos */
+        align-items: flex-start; /* Alinear los elementos a la izquierda */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Cambiar el menú de horizontal a vertical */
+        gap: 15px; /* Reducir el espacio entre los elementos del menú */
+    }
+
+    .logo img {
+        width: 100px; /* Redimensionar el logo en pantallas más pequeñas */
+    }
+}
+/* Estilos para la sección hero */
+.hero {
+    background: url('imagen-de-fondo.jpg') no-repeat center center/cover; /* Imagen de fondo que cubre toda la sección */
+    padding: 100px 20px; /* Espaciado dentro de la sección */
+    text-align: center; /* Centrar todo el contenido */
+    color: #fff; /* Color del texto */
+    position: relative; /* Permite usar elementos como superposiciones */
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposición oscura */
+    z-index: 1; /* Coloca la superposición detrás del contenido */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Coloca el contenido por encima de la superposición */
+    max-width: 800px; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.hero h1 {
+    font-size: 48px; /* Tamaño grande del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 20px; /* Tamaño de la descripción */
+    margin-bottom: 30px; /* Espacio debajo del párrafo */
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px; /* Reducir el espaciado en pantallas pequeñas */
+        height: auto; /* Permitir que el contenido defina la altura */
+    }
+
+    .hero h1 {
+        font-size: 36px; /* Ajuste de tamaño del título en móviles */
+    }
+
+    .hero p {
+        font-size: 18px; /* Ajuste de tamaño del párrafo en móviles */
+    }
+}
+/* Estilos para la llamada a la acción */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px; /* Tamaño del botón */
+    background-color: #f0a500; /* Color de fondo del botón */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    font-size: 18px; /* Tamaño de la fuente del botón */
+    font-weight: bold; /* Hacer el texto del botón más fuerte */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.cta-button:hover {
+    background-color: #ffb700; /* Cambio de color al pasar el ratón */
+    transform: scale(1.05); /* Ligero aumento de tamaño */
+}
+
+/* Estilos responsivos para la llamada a la acción */
+@media (max-width: 768px) {
+    .cta-button {
+        font-size: 16px; /* Ajuste del tamaño del texto del botón */
+        padding: 12px 25px; /* Ajuste del tamaño del botón en móviles */
+    }
+}
+/* Estilos para la sección de dos columnas */
+.two-columns {
+    display: flex; /* Utilizar flexbox para crear las columnas */
+    justify-content: space-between; /* Espaciar las columnas */
+    align-items: center; /* Alinear verticalmente */
+    padding: 50px 20px; /* Espaciado alrededor de la sección */
+    gap: 40px; /* Espacio entre las columnas */
+    background-color: #f5f5f5; /* Color de fondo suave para la sección */
+    max-width: 1200px; /* Ancho máximo de la sección */
+    margin: 0 auto; /* Centrar la sección */
+}
+
+/* Estilos para la columna de la imagen */
+.image-column {
+    flex: 1; /* La columna de la imagen ocupa la mitad del espacio */
+    display: flex;
+    justify-content: center; /* Centrar la imagen horizontalmente */
+    align-items: center; /* Centrar la imagen verticalmente */
+}
+
+.image-container img {
+    width: 100%; /* Ajustar la imagen al tamaño del contenedor */
+    max-width: 500px; /* Limitar el tamaño máximo de la imagen */
+    height: auto; /* Mantener las proporciones de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
+}
+
+/* Estilos para la columna de contenido */
+.content-column {
+    flex: 1; /* La columna de contenido ocupa la otra mitad del espacio */
+    padding: 20px; /* Espaciado dentro de la columna */
+}
+
+.content-column h2 {
+    font-size: 32px; /* Tamaño del título */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.content-column p {
+    font-size: 18px; /* Tamaño de la descripción */
+    color: #666; /* Color gris para el texto */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    margin-bottom: 30px; /* Espacio debajo del párrafo */
+}
+
+.cta-link {
+    display: inline-block; /* Hacer que el enlace se vea como un botón */
+    padding: 12px 25px; /* Tamaño del botón */
+    background-color: #f0a500; /* Color de fondo del botón */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave en el hover */
+}
+
+.cta-link:hover {
+    background-color: #ffb700; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .two-columns {
+        flex-direction: column; /* Cambiar a disposición vertical en móviles */
+        text-align: center; /* Centrar el texto y la imagen en pantallas pequeñas */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Ajustar el tamaño de la imagen en móviles */
+        margin-bottom: 20px; /* Añadir espacio debajo de la imagen en móviles */
+    }
+
+    .content-column h2 {
+        font-size: 28px; /* Ajustar el tamaño del título en pantallas pequeñas */
+    }
+
+    .content-column p {
+        font-size: 16px; /* Ajustar el tamaño del párrafo en pantallas pequeñas */
+    }
+
+    .cta-link {
+        font-size: 14px; /* Reducir el tamaño del botón en móviles */
+    }
+}
+/* Estilos para la sección de la galería */
+.gallery-section {
+    padding: 50px 20px; /* Espaciado alrededor de la sección */
+    background-color: #f9f9f9; /* Fondo claro */
+    text-align: center; /* Centrar el título */
+}
+
+.gallery-section h2 {
+    font-size: 32px; /* Tamaño del título */
+    margin-bottom: 40px; /* Espaciado debajo del título */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para la galería */
+.gallery {
+    display: grid; /* Crear un grid para las imágenes */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas adaptables según el tamaño */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin: 0 auto; /* Centrar la galería */
+    max-width: 1200px; /* Ancho máximo para la galería */
+}
+
+/* Estilos para cada item de la galería */
+.gallery-item {
+    overflow: hidden; /* Ocultar cualquier desbordamiento de las imágenes */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave debajo de las imágenes */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.gallery-item img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    display: block; /* Asegura que la imagen no tenga márgenes extraños */
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom suave */
+}
+
+/* Efecto de zoom al pasar el ratón por encima */
+.gallery-item:hover img {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen al hacer hover */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajustar columnas para pantallas pequeñas */
+    }
+
+    .gallery-section h2 {
+        font-size: 28px; /* Ajustar el tamaño del título en móviles */
+    }
+}
+/* Estilos generales para la sección del footer */
+.footer-section {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    padding: 50px 20px; /* Espaciado interno en el footer */
+    color: #ffffff; /* Texto en blanco */
+    font-family: Arial, sans-serif; /* Fuente básica */
+}
+
+.footer-container {
+    display: flex; /* Flexbox para organizar las columnas */
+    justify-content: space-between; /* Espacio entre las columnas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el footer en la página */
+    flex-wrap: wrap; /* Permitir que las columnas se ajusten en pantallas pequeñas */
+}
+
+/* Estilos para cada columna del footer */
+.footer-column {
+    flex: 1; /* Cada columna ocupa un espacio igual */
+    margin: 20px; /* Separación entre columnas */
+    min-width: 200px; /* Ancho mínimo de las columnas */
+    text-align: center; /* Centrar el contenido en las columnas */
+}
+
+/* Estilos para el logo de la empresa */
+.footer-logo {
+    width: 150px; /* Ancho del logo */
+    height: auto; /* Mantener las proporciones */
+    margin-bottom: 20px; /* Espaciado debajo del logo */
+}
+
+/* Estilos para los títulos de las columnas */
+.footer-column h4 {
+    font-size: 18px; /* Tamaño de las cabeceras */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    color: #f0a500; /* Color destacado para los títulos */
+}
+
+/* Estilos para las listas dentro de las columnas */
+.footer-column ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces de las listas */
+.footer-column ul li a {
+    color: #ffffff; /* Enlaces en blanco */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave de color */
+}
+
+.footer-column ul li a:hover {
+    color: #f0a500; /* Cambiar a color dorado al pasar el ratón */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    display: flex; /* Flexbox para organizar los íconos */
+    justify-content: center; /* Centrar los íconos */
+    gap: 15px; /* Espacio entre los íconos */
+}
+
+.social-icon img {
+    width: 32px; /* Tamaño de los íconos de redes sociales */
+    height: 32px;
+    transition: transform 0.3s ease; /* Efecto de transición suave */
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño al pasar el ratón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Columnas en vertical en pantallas pequeñas */
+        text-align: center; /* Centrar todo el contenido en pantallas pequeñas */
+    }
+
+    .footer-column {
+        margin-bottom: 30px; /* Espaciado extra entre columnas en móviles */
+    }
+}
